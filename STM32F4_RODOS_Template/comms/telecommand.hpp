@@ -9,6 +9,7 @@
 enum DataType_TC {
     DataType_TC_Shutoff = 1, // Shuts down the satellite using external switch. Has no datapacket class
     DataType_TC_Calib = 2, // Calibration command
+    DataType_TC_ArmPower = 3 // Docking Arm power on/off
 };
 
 
