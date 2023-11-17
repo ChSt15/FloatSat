@@ -19,6 +19,7 @@
 #include "complex.h"
 #include "homogenous.h"
 
+
 #ifndef NO_RODOS_NAMESPACE
 namespace RODOS {
 #endif

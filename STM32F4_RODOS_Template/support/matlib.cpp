@@ -137,7 +137,7 @@ float Matrix_<3,3,float>::determinant() const{
 }
 
 //=====================================================Implementierung Globale Methoden============================================
-
+/*
 int64_t faculty(const int &x) {
     int64_t faculty = 1;
     for (int i = 2; i <= x; ++i)
@@ -190,7 +190,7 @@ double utcToJD(int year, int month, int date, int hour, int minute, double secon
 	JD = d2k + JD2000;
 	return JD;
 }
-
+*/
 /*
 * Sidereal Time differs from solar time because of earth's precession
 * GMST means Greenwhich Mean Sidereal Time defined as the hour angle of the vernal equinox
@@ -206,7 +206,7 @@ double utcToJD(int year, int month, int date, int hour, int minute, double secon
 * Copyright (c) 2010, Darin Koblick
 * All rights reserved.
 */
-
+/*
 double jd2GMST(double jd){
 	double gmst;
 	double jdmin = floor(jd) - 0.5;
@@ -383,7 +383,7 @@ Matrix3D _DCM_generator(Vector3D fromA, Vector3D toA, Vector3D fromB, Vector3D t
     result.r[2][2] = fromZ.dot(toZ);
 
     return result;
-}
+}*/
 
 /* cos_direction_matrix_from_vectors
  *  when we use only one vector to rate a body, we get an ambiguous rotation
@@ -395,7 +395,7 @@ Matrix3D _DCM_generator(Vector3D fromA, Vector3D toA, Vector3D fromB, Vector3D t
  *  two vectors has to be the same before and after the rotation.
  */
 
-
+/*
 // WARNING!!! First we have to rotate to (1,0,0) and (0,1,0) and then continue else it does not work, WHY?!?!?!
 Matrix3D direction_cos_matrix_from_vectors(Vector3D fromA, Vector3D toA, Vector3D fromB, Vector3D toB) {
     Vector3D x(1,0,0);
@@ -408,7 +408,7 @@ Matrix3D direction_cos_matrix_from_vectors(Vector3D fromA, Vector3D toA, Vector3
     Matrix3D m2 = _DCM_generator(x, toA, y, toB);
 
     return m2*m1;
-}
+}*/
 
 
 #ifndef NO_RODOS_NAMESPACE

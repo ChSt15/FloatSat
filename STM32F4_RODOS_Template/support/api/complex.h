@@ -8,8 +8,6 @@
 #ifndef COMPLEX_
 #define COMPLEX_
 
-#include "matlib.h"
-
 #ifndef NO_RODOS_NAMESPACE
 namespace RODOS {
 #endif

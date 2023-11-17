@@ -17,6 +17,8 @@ namespace RODOS {
 #define M_PI 3.14159265358979323846
 #endif
 
+extern const double EPSILON;
+
 template <typename TYPE>
 inline TYPE sgn(TYPE val) {
     return static_cast<TYPE>((static_cast<TYPE>(0) < val) - (val < static_cast<TYPE>(0)));
@@ -68,9 +70,9 @@ namespace RODOS {
 /**
 jd means Julian Date, which describes the days from 1st January −4712 (4713 bc) 12:00 o' clock
 */
-const double JD2000 = 2451545.0; //days  -- Julian Date on 01.01.2000 12'o clock
-const double A_WGS84 = 6378137.0; // m
-extern const double F_WGS84 = 1./298.257223563;
+extern const double JD2000; //days  -- Julian Date on 01.01.2000 12'o clock
+extern const double A_WGS84; // m
+extern const double F_WGS84;
 
 double R_n(const double degreeOfLatitude); ///< earthradius in meter at given latitude (rad)
 

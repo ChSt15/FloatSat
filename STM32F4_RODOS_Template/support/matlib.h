@@ -5,8 +5,6 @@
 #include "math.h" // for sin, sqrt, etc
 #include "stdint.h"
 
-#include "matlib.h"
-
 #include "api/math_support.h"
 #include "api/typedefs.h"
 #include "api/matrix.h"
