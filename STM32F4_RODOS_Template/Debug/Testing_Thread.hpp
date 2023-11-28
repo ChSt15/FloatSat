@@ -28,6 +28,6 @@ private:
 };
 
 
-extern TestingThread debugthread;
+//extern TestingThread debugthread;
 
 #endif 

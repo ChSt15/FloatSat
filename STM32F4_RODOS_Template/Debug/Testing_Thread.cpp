@@ -10,7 +10,7 @@
 
 #include "simple_pid.hpp"
 
-TestingThread::TestingThread()
+TestingThread::TestingThread() : Thread("Testing Thread", 100, 2000)
 {
 
 }
@@ -46,6 +46,7 @@ void TestingThread::run()
 
 }
 
+TestingThread testingThread;
 
 //DebugThread debugthread;
 //Semaphore mode_protec;
