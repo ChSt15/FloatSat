@@ -19,7 +19,7 @@ private:
 	 * @note For high frequencies (20kHz), we might need to modell non-linearities with sqrt(voltagePercentage) in setVoltage()
 	*/
 	int pwmFrequency = 2000;
-	int pwmIncrements = 500;
+	int pwmIncrements = 512;
 
 	// @brief Maximum output voltage percentage of HBridge output.
 	float MAX_OUTPUT_PERCENTAGE = 1.0f;
@@ -43,7 +43,7 @@ public:
 	 * @param pwm1 PWM output connected to the HBridge pin 1
 	 * @param pwm2 PWM output connected to the HBridge pin 2
 	*/
-	HBridge(RODOS::PWM_IDX pwm1 = RODOS::PWM_IDX00, RODOS::PWM_IDX pwm2 = RODOS::PWM_IDX01);
+	HBridge(RODOS::PWM_IDX pwm1, RODOS::PWM_IDX pwm2);
 
 	/**
 	 * @brief Set desired output voltage of HBridge

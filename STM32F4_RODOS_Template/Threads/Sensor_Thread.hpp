@@ -26,6 +26,6 @@ private:
 };
 
 
-extern SensorThread sensorthread;
+//extern SensorThread sensorthread;
 
 #endif 

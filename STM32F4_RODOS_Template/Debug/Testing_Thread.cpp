@@ -34,11 +34,11 @@ void TestingThread::run()
 		float wheelVel = encoder.getSpeed().data;
 
 		float wheelPwr = pid.update(wheelVel);
-		wheelPwr = sinf(SECONDS_NOW() * 0.1) * 0.5f;
+		wheelPwr = 0.2;//sinf(SECONDS_NOW() * 0.1);
 
 		hbridge.setVoltage(wheelPwr);
 
-		PRINTF("Power: %.2f [%], Encoder: %.2f [Rad/s]", wheelPwr, wheelVel);
+		PRINTF("Power: %.2f [%], Encoder: %.2f [Rad/s]\n", wheelPwr, wheelVel);
 
 		suspendCallerUntil(NOW() + period * MILLISECONDS);
 		

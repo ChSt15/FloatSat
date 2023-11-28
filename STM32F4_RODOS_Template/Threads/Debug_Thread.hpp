@@ -35,7 +35,7 @@ private:
 };
 
 
-extern DebugThread debugthread;
+//extern DebugThread debugthread;
 extern Semaphore mode_protec;
 extern modes mode;
 

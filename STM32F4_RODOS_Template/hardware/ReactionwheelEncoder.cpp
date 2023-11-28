@@ -138,7 +138,7 @@ extern "C"
 TimestampedData<float>& ReactionwheelEncoder::getSpeed()
 {
     double SensorTime = ((NOW() - CaptureTime) / (double)MILLISECONDS);
-    if (SensorTime > 250) //minimum measured speed is 2 RPS(120 RPM). This can give us 250ms of minimum interval between interrupts (2 interrupts every one revolution).
+    if (SensorTime > 1000) //minimum measured speed is 2 RPS(120 RPM). This can give us 250ms of minimum interval between interrupts (2 interrupts every one revolution).
     {
         TIM2Freq = 0;
     }
@@ -146,7 +146,7 @@ TimestampedData<float>& ReactionwheelEncoder::getSpeed()
     Speed.timestamp = NOW();
     if (EncoderB)
     {
-        Speed.data -1 * ((float)TIM2Freq / 16) * 60;  //CCW
+        Speed.data = -1 * ((float)TIM2Freq / 16) * 60;  //CCW
     }
     else { Speed.data = ((float)TIM2Freq / 16) * 60; }  //CW
 

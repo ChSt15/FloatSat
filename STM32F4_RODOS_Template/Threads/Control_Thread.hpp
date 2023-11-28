@@ -26,6 +26,6 @@ private:
 };
 
 
-extern ControlThread controlthread;
+//extern ControlThread controlthread;
 
 #endif 

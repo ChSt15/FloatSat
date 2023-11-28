@@ -20,16 +20,16 @@ void HBridge::initialization(){
 void HBridge::setVoltage(float voltagePercentage)
 {      
     // Check if parameter exceeds limits
-    float voltagePercentageDesired = checkVoltagePercentage(voltagePercentage);
+    //float voltagePercentageDesired = checkVoltagePercentage(voltagePercentage);
     
     // Set increments accordingly
-    uint16_t increments = static_cast<uint16_t>(abs(pwmIncrements * voltagePercentage));
-    if (voltagePercentageDesired >= 0) {
-        pwm1.write(increments);
-        pwm2.write(0);
-    } else {
+    //uint16_t increments = static_cast<uint16_t>(abs(pwmIncrements * voltagePercentage));
+    if (voltagePercentage > 0) {
         pwm1.write(0);
-        pwm2.write(increments);
+        pwm2.write(pwmIncrements * voltagePercentage);
+    } else {
+        pwm1.write(-pwmIncrements * voltagePercentage);
+        pwm2.write(0);
     }
 }
 

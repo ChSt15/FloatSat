@@ -101,4 +101,4 @@ void SensorThread::run()
 }
 
 
-SensorThread sensorthread;
+//SensorThread sensorthread;
