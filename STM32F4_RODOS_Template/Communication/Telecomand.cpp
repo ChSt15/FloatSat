@@ -1,10 +1,10 @@
 #include "Telecomand.hpp"
 
 // Dummy topic + sub
-Topic<int> DummyTopic(40, "IMU_Telemetry");
-static CommBuffer<int> DummyBuffer;
+Topic<char> DummyTopic(42, "Dummy");
+static CommBuffer<char> DummyBuffer;
 static Subscriber DummyDataSubsciber(DummyTopic, DummyBuffer);
-int DummyReceiver;
+char DummyReceiver = 'c';
 
 
 Telecomand::Telecomand()
@@ -18,7 +18,10 @@ Telecomand::Telecomand()
 
 void Telecomand::process()
 {
-	DummyBuffer.get(DummyReceiver);
+	//DummyBuffer.get(DummyReceiver);
+	DummyTopic.publish(DummyReceiver);
+	//telemetry.temp_test(DummyReceiver);
+
 }
 
 

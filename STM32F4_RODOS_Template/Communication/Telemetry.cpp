@@ -6,9 +6,9 @@ static Subscriber IMUDataSubsciber(IMUDataTopic, IMUDataBuffer);
 TimestampedData<IMUData> IMUDataReceiver;
 
 // IMU telemetry topic
-Topic<IMUData> IMUTelemetryTopic(40, "IMU_Telemetry");
+//Topic<IMUData> IMUTelemetryTopic(40, "IMU_Telemetry");
 
-/*
+
 struct IMUTelemetry
 {
 	float wx, wy, wz;       // [rad/s]
@@ -17,12 +17,15 @@ struct IMUTelemetry
 	float temperature;      // [°C]
 };
 Topic<IMUTelemetry> IMUTelemetryTopic(40, "IMU_Telemetry");
-*/
+
+Topic<char> TestTopic(41, "Test");
+
 
 Telemety::Telemety()
 {
 	// topics to forward
 	topics.add(IMUTelemetryTopic.topicId);
+	topics.add(TestTopic.topicId);
 	//..
 	uart_gateway.setTopicsToForward(&(this->topics));
 }
@@ -30,11 +33,13 @@ Telemety::Telemety()
 
 void Telemety::send_Continuous()
 {
+/*
 	// Collect data
 	IMUDataBuffer.get(IMUDataReceiver);
 	// ...
-	/*
+
 	IMUTelemetry temp;
+
 	temp.wx = IMUDataReceiver.data.angularVelocity.x;
 	temp.wy = IMUDataReceiver.data.angularVelocity.y;
 	temp.wz = IMUDataReceiver.data.angularVelocity.z;
@@ -50,10 +55,15 @@ void Telemety::send_Continuous()
 	temp.temperature = IMUDataReceiver.data.temperature;
 
 	IMUTelemetryTopic.publish(temp);
-	*/
 
+*/
 	// Send data
-	IMUTelemetryTopic.publish(IMUDataReceiver.data);
+	//IMUTelemetryTopic.publish(IMUDataReceiver.data);
+}
+
+void Telemety::temp_test(char c)
+{
+	TestTopic.publish(c);
 }
 
 

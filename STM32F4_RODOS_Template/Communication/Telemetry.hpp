@@ -19,6 +19,7 @@ public:
 	// Continuous Telemetry
 	void send_Continuous();
 	void send_ContinuousExtended();
+	void temp_test(char c);
 
 	// Onetime Telemetry
 	void send_CalibGyro();

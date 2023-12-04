@@ -30,7 +30,6 @@ void ControlThread::run()
 		AttitudeDataBuffer.get(AttitudeDataReceiver);
 		EncoderDataBuffer.get(EncoderDataReceiver);
 
-		hbridge.setVoltage(0.05);
 
 		suspendCallerUntil(NOW() + period * MILLISECONDS);
 	}

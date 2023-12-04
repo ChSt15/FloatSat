@@ -4,6 +4,7 @@
 #include "rodos.h"
 
 #include "Gateway.hpp"
+#include "Telemetry.hpp"
 
 
 class Telecomand
