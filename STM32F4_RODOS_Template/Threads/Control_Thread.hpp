@@ -5,18 +5,8 @@
 #include "matlib.h"
 
 #include "../timestamp.hpp"
-
-#include "../control/AttitudeEstimation.hpp"
-#include "../control/PIDController.hpp"
-#include "../control/ReactionwheelControl.hpp"
-#include "../control/AngularVelocityControl.hpp"
-#include "../control/AngularPositionControl.hpp"
-
-#include "../hardware/ReactionwheelEncoder.hpp"
 #include "../hardware/hbridge.hpp"
-
-#include "Debug_Thread.hpp"
-#include "Modes.hpp"
+#include "../hardware/adc.hpp"
 #include "Config.hpp"
 
 
